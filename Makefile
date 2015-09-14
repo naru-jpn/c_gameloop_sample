@@ -6,7 +6,7 @@ SRC_DIR = src
 
 BASIC_FILES    = main.c io_settings.c kbhit.c timer.c draw.c components.c
 RESOURCE_FILES = resource/resources.c resource/maps.c
-SCENE_FILES    = scenes/scenes.c scenes/scene_0001.c scenes/scene_setting.c
+SCENE_FILES    = scenes/scenes.c scenes/scene_0001.c scenes/scene_0002.c scenes/scene_setting.c
 
 SRC_FILES = $(BASIC_FILES) $(RESOURCE_FILES) $(SCENE_FILES)
 

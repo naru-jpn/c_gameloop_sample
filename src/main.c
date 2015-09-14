@@ -61,18 +61,22 @@ int main(){
 			clean_setting();
 		}
 
-		// 操作用・出力用関数の取得
+		// 操作用関数の取得と操作
 		FUNC_INPUT_CONTROL control_func = NULL;
-		FUNC_OUTPUT_COMPONENTS output_func = NULL;
 		if (is_setting==0) {
 			control_func = get_icontrol_function(current_scene);
-			output_func = get_ocomponent_function(current_scene);
 		} else {
 			control_func = input_control_setting;
-			output_func = root_component_setting;
 		}
-		// 操作と出力
 		control_func(hero, &current_scene, ikeytype, input);
+
+		// 出力用関数の取得と出力
+        FUNC_OUTPUT_COMPONENTS output_func = NULL;
+        if (is_setting==0) {
+            output_func = get_ocomponent_function(current_scene);
+        } else {
+            output_func = root_component_setting;
+        }
 		component *output = output_func();
 		draw_component(0, 0, output);
 		draw_component(0, 0, hero);

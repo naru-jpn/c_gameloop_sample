@@ -1,4 +1,5 @@
 #include "scene_0001.h"
+#include "scenes.h"
 #include "../resource/maps.h"
 #include "../kbhit.h"
 #include <stdlib.h>
@@ -22,7 +23,11 @@ void input_control0001(component* hero, int *current_scene, int ikeytype, char i
 	} else if (ikeytype==IKEYTYPE_ARRLEFT) {
 		if (is_movable(hero->x-1, hero->y)) hero->x--;
 	} else if (ikeytype==IKEYTYPE_ARRRIGHT) {
-		if (is_movable(hero->x+1, hero->y))hero->x++;
+		if (is_movable(hero->x+1, hero->y)) hero->x++;
+	}
+	if (hero->y==1 && hero->x>=14 && hero->x<=17) {
+		switch_scene(current_scene, 2);
+		hero->y = 13;
 	}
 }
 

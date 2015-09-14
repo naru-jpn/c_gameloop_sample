@@ -1,5 +1,6 @@
 #include "scenes.h"
 #include "scene_0001.h"
+#include "scene_0002.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,6 +12,8 @@ FUNC_INPUT_CONTROL get_icontrol_function(int nscene) {
 	switch (nscene) {
         case 1:
             return input_control0001;
+        case 2:
+			return input_control0002;
         default:
             return NULL;
     }
@@ -20,6 +23,8 @@ FUNC_OUTPUT_COMPONENTS get_ocomponent_function(int nscene) {
 	switch (nscene) {
         case 1:
             return root_component0001;
+		case 2:
+			return root_component0002;
         default:
             return NULL;
     }
@@ -41,6 +46,8 @@ void (*get_setup_function(int nscene))(void) {
 	switch (nscene) {
 		case 1:
 			return setup0001;
+		case 2:
+			return setup0002;
 		default:
 			return NULL;
 	}
@@ -50,6 +57,8 @@ void (*get_clean_function(int nscene))(void) {
 	switch (nscene) {
         case 1:
             return clean0001;
+		case 2:
+			return clean0002;
         default:
             return NULL;
     }
